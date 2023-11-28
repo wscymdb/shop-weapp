@@ -1,1 +1,13 @@
 /* pages/home/home.wxss */
+.home {
+  /* height: 100vh; */
+  background-color: #f3f3f3;
+
+}
+.main-section {
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.main-swiper {
+  height: 320rpx;
+}

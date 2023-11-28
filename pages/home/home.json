@@ -1,4 +1,8 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "van-button": "vant-weapp/button/index",
+    "home-category":"/components/home-category/home-category",
+    "home-list":"/components/home-list/home-list"
+  },
   "navigationBarTitleText": "首页"
 }

@@ -1,0 +1,24 @@
+<view class="home-list-item">
+  <view class="img">
+    <image src="http://124.221.241.135:8888/cat.jpeg" mode="aspectFill" />
+  </view>
+  <view class="main">
+    <view class="title">
+      <!-- <view class="new-tag">新品</view> -->
+      <view class="txt">安格斯儿童牛排套餐 非常好吃安格斯儿童牛排套餐 非常好吃</view>
+      
+    </view>
+    <view class="subtitle">
+      给宝宝吃的牛排，很嫩，很贴心，加油噢力给
+    </view>
+    <view class="price">
+      <view class="unit">￥</view>
+      <view class="current-price">238.00</view>
+      <view class="previous-price">256.00</view>
+    </view>
+  
+  </view>
+<view class="shopping-cart">
+  <van-icon name="cart-o" color="#fff" size="38rpx" />
+</view>
+</view>

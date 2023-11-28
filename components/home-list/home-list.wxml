@@ -1,0 +1,9 @@
+<view class="home-list">
+<block wx:for="{{7}}" wx:key="*this">
+<view class="item">
+  <home-list-item></home-list-item>
+
+</view>
+  
+</block>
+</view>

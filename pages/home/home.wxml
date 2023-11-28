@@ -1,2 +1,15 @@
-<!--pages/home/home.wxml-->
-<text>pages/home/home.wxml</text>
+<view class="home">
+<!-- 轮播图组件 -->
+<swiper autoplay 	indicator-dots 	circular class="main-swiper">
+  <block wx:for="{{2}}" wx:key="*this">
+    <swiper-item >
+      <image mode="aspectFill" src="https://tse4-mm.cn.bing.net/th/id/OIP-C.dIFgv5Jaess7oclRS7xg2wHaE8?rs=1&pid=ImgDetMain" />
+    </swiper-item>
+  </block>
+</swiper>
+<!-- 首页分类区域  -->
+<view class="main-section">
+  <home-category></home-category>
+  <home-list></home-list>
+</view>
+</view>

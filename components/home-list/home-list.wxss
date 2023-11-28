@@ -1,0 +1,10 @@
+/* components/home-list/home-list.wxss */
+.home-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+ 
+}
+.item {
+  width: 48%;
+}

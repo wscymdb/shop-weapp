@@ -10,5 +10,7 @@
 } 
 image {
   width: 100%;
+}
+.himage {
   height: 100%;
 }

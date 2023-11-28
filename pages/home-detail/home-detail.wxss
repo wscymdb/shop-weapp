@@ -1,0 +1,109 @@
+.home-detail {
+  background-color: #f3f3f3;
+}
+.detail-swiper {
+  height: 700rpx;
+}
+
+.main {
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.card {
+  padding: 20rpx;
+  border-radius: 20rpx;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+.price-section {
+margin-bottom: 20rpx;
+}
+.price {
+  display: flex;
+  align-items: center;
+  margin-top: 20rpx;
+  color: #c62d27;
+}
+.price .unit {
+font-size: 28rpx;
+}
+.price .current-price {
+font-size: 42rpx;
+font-weight: 700;
+}
+.price .previous-price {
+  margin-left: 20rpx;
+  font-size: 28rpx;
+  color:#949494;
+  text-decoration: line-through;
+}
+.title {
+  margin-top: 20rpx;
+}
+.title .txt {
+  flex: 1;
+  font-size: 32rpx;
+  font-weight: 700;
+
+  word-break: break-all;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.subtitle {
+  margin-top: 10rpx;
+  color: #909090;
+  font-size: 28rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.key {
+  color: #9b9b9b;
+  font-size: 32rpx;
+  margin-right: 30rpx;
+}
+.value {
+  font-size: 32rpx;
+}
+
+.freight  {
+  display: flex;
+  align-items: center;
+
+}
+.address {
+
+  display: flex;
+  align-items: center;
+  align-items: flex-start;
+  margin-top: 20rpx;
+}
+.address .right {
+  flex: 1;
+}
+.address .position {
+  display: flex;
+  align-items: center;
+  font-size: 32rpx;
+  color: #787777;
+}
+
+.address .desc {
+  margin-top: 20rpx;
+  font-size: 26rpx;
+}
+.address .desc .time {
+  color: red;
+}
+.detail-desc-section {
+  padding: 0 10rpx;
+}
+
+.detail-desc-section .title {
+
+  padding: 20rpx;
+  font-size: 32rpx;
+  font-weight: 700;
+}

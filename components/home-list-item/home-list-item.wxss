@@ -12,6 +12,9 @@
 .img {
   height: 360rpx;
 }
+image {
+  height: 100%;
+}
 .main {
   flex: 1;
   padding: 20rpx;

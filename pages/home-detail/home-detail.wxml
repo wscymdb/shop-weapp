@@ -47,15 +47,28 @@
       </view>
 
     </view>
-    
   </view>
   <!-- 详情图片区域 -->
   <view class="detail-desc-section card">
-      <view class="title">商品详情</view>
-      <block wx:for="{{5}}" wx:key="*this">
-        <image src="https://tse4-mm.cn.bing.net/th/id/OIP-C.dIFgv5Jaess7oclRS7xg2wHaE8?rs=1&pid=ImgDetMain" mode="aspectFill"/>
-      </block>
+    <view class="title">商品详情</view>
+    <block wx:for="{{5}}" wx:key="*this">
+      <image src="https://tse4-mm.cn.bing.net/th/id/OIP-C.dIFgv5Jaess7oclRS7xg2wHaE8?rs=1&pid=ImgDetMain" mode="aspectFill" />
+    </block>
 
-    </view>
+  </view>
+  <!-- 购买加购区域 -->
+  <van-goods-action>
+    <van-goods-action-icon icon="wap-home-o" text="回首页" bind:tap="goHome"  />
+    <van-goods-action-icon icon="cart-o" text="购物车" info="5" />
+    <van-goods-action-button text="加入购物车" type="warning" bind:tap="handleSubmit" data-type="{{0}}" />
+    <van-goods-action-button bind:tap="handleSubmit" data-type="{{1}}" text="立即购买" />
+  </van-goods-action>
+  <!-- 商标 -->
+  <view class="brand">
+  ®️™️飞天牛科技网络提供
+  </view>
+  <!-- 加购、购买弹窗 -->
+  <shopping-cart-detail wx:if="{{show}}" bind:popupClose="handlePopupClose" bind:popupConfirm="handleConfirm"></shopping-cart-detail>
+  <van-toast id="van-toast" />
 
 </view>

@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    showCartDetail:false
   },
 
   /**
@@ -14,7 +14,26 @@ Page({
   onLoad(options) {
 
   },
-
+  // 点击购物车icon
+  handleCartClick() {
+    this.setData({
+      showCartDetail:true
+    })
+      
+  },
+  // 加购弹窗关闭
+  handleClose() {
+    this.setData({
+      showCartDetail:false
+    })
+  },
+  // 点击商品
+  handleItemClick() {
+    console.log(2);
+    wx.redirectTo({
+      url: '/pages/home-detail/home-detail',
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -1,11 +1,13 @@
 // pages/home-detail/home-detail.js
+import Toast from '@vant/weapp/toast/toast';
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    show: false,
+    type: 0
   },
 
   /**
@@ -14,53 +16,41 @@ Page({
   onLoad(options) {
 
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
+  // 
+  goHome() {
+    wx.switchTab({
+      url: '/pages/home/home',
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
+  // 点击加购或者立即购买
+  handleSubmit(e) {
+    const {
+      currentTarget: {
+        dataset
+      }
+    } = e
+    this.setData({
+      show: true,
+      type: dataset.type
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
+  // 弹窗关闭
+  handlePopupClose(e) {
+    this.setData({
+      show: false
+    })
   },
+  // 弹窗确定
+  handleConfirm() {
+    // this.data.type 0-》从加入购物车进入  1-》立即购买进入
+    if (this.data.type === 0) {
+      Toast('加购成功~');
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
+      this.setData({
+        show: false
+      })
+    } else {
 
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
+    }
   }
 })

@@ -18,6 +18,11 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    handleCartClick() {
+      this.triggerEvent('cartClick')
+    },
+    handleItemClick() {
+      this.triggerEvent('itemClick')
+    },
   }
 })

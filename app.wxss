@@ -14,3 +14,9 @@ image {
 .himage {
   height: 100%;
 }
+.brand {
+  padding: 20rpx 0;
+  text-align: center;
+  font-size: 24rpx;
+  color: #ccc;
+}

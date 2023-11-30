@@ -10,6 +10,8 @@
 <!-- 首页分类区域  -->
 <view class="main-section">
   <home-category></home-category>
-  <home-list></home-list>
+  <home-list bind:cartClick="handleCartClick" bind:itemClick="handleItemClick"></home-list>
 </view>
+<shopping-cart-detail wx:if="{{showCartDetail}}" bind:popupClose="handleClose"></shopping-cart-detail>
+
 </view>

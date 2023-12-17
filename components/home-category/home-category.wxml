@@ -1,12 +1,13 @@
 <view class="home-category">
-<view class="list">
-  <block wx:for="{{8}}" wx:key="*this">
-    <view  class="item {{index < 4 ? 'first-line-item' : ''}}">
-    <view class="img">
-      <image src="" mode=""/>
-    </view>
-      <view class="name">新品尝鲜</view>
-    </view>
-  </block>
-</view>
+  <view class="list" >
+    <block wx:for="{{list}}" wx:key="*this">
+      <view class="item {{index < 4 ? 'first-line-item' : ''}}" bind:tap="handleItemClick" data-id="{{item.id}}">
+        <view class="img">
+          <image src="{{item.icon}}" mode="" />
+        </view>
+        <view class="name">{{item.name}}</view>
+      </view>
+    </block>
+  </view>
+
 </view>

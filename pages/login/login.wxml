@@ -1,0 +1,12 @@
+<!--pages/login/login.wxml-->
+<view class="login">
+  <view class="main">
+<view class="logo">
+<image src="http://124.221.241.135:8888/cat.jpeg" mode=""/>
+</view>
+  <input class="ipt" value="{{info.name}}" bind:input="handleIpt"	 data-type="name" placeholder-style="color:#ccc" type="text" placeholder="请输入用户名"/>
+  <input class="ipt" value="{{info.password}}" bind:input="handleIpt" data-type="password" placeholder-style="color:#ccc" type="password" placeholder="请输入密码"/>
+  </view>
+  <van-button type="info" round size="large" bind:tap="handleLogin">登陆</van-button>
+
+</view>

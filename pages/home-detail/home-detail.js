@@ -1,5 +1,6 @@
 // pages/home-detail/home-detail.js
 import Toast from '@vant/weapp/toast/toast';
+import http from '../../service/api/index'
 Page({
 
   /**
@@ -7,14 +8,36 @@ Page({
    */
   data: {
     show: false,
-    type: 0
+    type: 0,
+    id: 0,
+    info: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    const {
+      id
+    } = options
+    this.setData({
+      id
+    })
+    this.initData()
+  },
+  async initData() {
+    const {
+      data,
+      code
+    } = await http.getProductById(this.data.id)
+    if (code === 0) {
+      let {detail_path,banner_path,...other} = data
+      detail_path = detail_path.split(',')
+      banner_path = banner_path.split(',')
+      this.setData({
+        info:{...other,detail_path,banner_path}
+      })
+    }
   },
   // 
   goHome() {

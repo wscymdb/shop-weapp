@@ -1,9 +1,9 @@
 <view class="home-detail">
   <!-- 轮播图 -->
   <swiper autoplay indicator-dots circular class="detail-swiper">
-    <block wx:for="{{2}}" wx:key="*this">
+    <block wx:for="{{info.banner_path}}" wx:key="item">
       <swiper-item>
-        <image class="himage" mode="aspectFill" src="https://tse4-mm.cn.bing.net/th/id/OIP-C.dIFgv5Jaess7oclRS7xg2wHaE8?rs=1&pid=ImgDetMain" />
+        <image class="himage" mode="aspectFill" src="{{item}}" />
       </swiper-item>
     </block>
   </swiper>
@@ -12,16 +12,16 @@
     <view class="price-section card">
       <view class="price">
         <view class="unit">￥</view>
-        <view class="current-price">238.00</view>
-        <view class="previous-price">¥256.00</view>
+        <view class="current-price">{{info.current_price}}</view>
+        <view class="previous-price">¥{{info.previous_price}}</view>
       </view>
       <view class="title">
         <view class="txt">
-          安格斯儿童牛排套餐 好吃的很
+          {{info.title}}
         </view>
       </view>
       <view class="subtitle">
-        给宝宝吃的牛排，很嫩很好嚼
+        {{info.subtitle}}
       </view>
     </view>
     <!-- 地址区域 -->
@@ -29,7 +29,7 @@
       <!-- 运费 -->
       <view class="freight">
         <view class="key">运费</view>
-        <view class="value">9.00元</view>
+        <view class="value">{{info.freight}}元</view>
       </view>
       <view class="address">
         <view class="key">送至</view>
@@ -51,8 +51,8 @@
   <!-- 详情图片区域 -->
   <view class="detail-desc-section card">
     <view class="title">商品详情</view>
-    <block wx:for="{{5}}" wx:key="*this">
-      <image src="https://tse4-mm.cn.bing.net/th/id/OIP-C.dIFgv5Jaess7oclRS7xg2wHaE8?rs=1&pid=ImgDetMain" mode="aspectFill" />
+    <block wx:for="{{info.detail_path}}" wx:key="item">
+      <image src="{{item}}" mode="aspectFill" />
     </block>
 
   </view>
@@ -72,3 +72,4 @@
   <van-toast id="van-toast" />
 
 </view>
+

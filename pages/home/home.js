@@ -15,7 +15,8 @@ Page({
 
   },
   // 点击购物车icon
-  handleCartClick() {
+  handleCartClick(e) {
+    
     this.setData({
       showCartDetail:true
     })
@@ -28,10 +29,10 @@ Page({
     })
   },
   // 点击商品
-  handleItemClick() {
-    console.log(2);
+  handleItemClick(e) {
+    const payload = e.detail
     wx.redirectTo({
-      url: '/pages/home-detail/home-detail',
+      url: `/pages/home-detail/home-detail?id=${payload.id}`,
     })
   },
   /**

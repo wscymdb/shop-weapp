@@ -1,0 +1,17 @@
+<!--pages/category-page/category-page.wxml-->
+<view class="category-page">
+<view class="title">精选大牌</view>
+<view class="content">
+<view class="list" wx:if="{{list.length}}">
+  <block wx:for="{{list}}" wx:key="id">
+    <view class="item">
+      <home-list-item info="{{item}}" bind:cartClick="handleCartClick" bind:itemClick="handleItemClick" ></home-list-item>
+    </view>
+  </block>
+</view>
+<view class="empty" wx:else>
+<image src="https://bpic.588ku.com/element_origin_min_pic/19/11/14/466a9e882567d77544304bad8b5ca3cd.jpg" mode="widthFix"/>
+</view>
+ 
+</view>
+</view>

@@ -1,7 +1,7 @@
 <view class="home-category">
   <view class="list" >
     <block wx:for="{{list}}" wx:key="*this">
-      <view class="item {{index < 4 ? 'first-line-item' : ''}}" bind:tap="handleItemClick" data-id="{{item.id}}">
+      <view class="item {{index < 4 ? 'first-line-item' : ''}}" bind:tap="handleItemClick" data-id="{{item.id}}" data-name="{{item.name}}">
         <view class="img">
           <image src="{{item.icon}}" mode="" />
         </view>

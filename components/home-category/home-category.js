@@ -33,9 +33,9 @@ Component({
       console.log(data);
     },
     handleItemClick(e) {
-      const {id} = e.currentTarget.dataset
+      const {id,name} = e.currentTarget.dataset
       wx.redirectTo({
-        url: `/pages/category-page/category-page?id=${id}`,
+        url: `/pages/category-page/category-page?id=${id}&name=${name}`,
       })
     }
   }

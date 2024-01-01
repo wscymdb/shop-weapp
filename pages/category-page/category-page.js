@@ -7,6 +7,7 @@ Page({
    */
   data: {
     label_id: 0,
+    title:'',
     list: []
   },
 
@@ -15,7 +16,8 @@ Page({
    */
   onLoad(options) {
     this.setData({
-      label_id: options.id
+      label_id: options.id,
+      title:options.name
     })
     this.initData()
   },
@@ -34,6 +36,13 @@ Page({
       })
     }
 
+  },
+
+  handleItemClick(e) {
+    const payload = e.detail
+    wx.redirectTo({
+      url: `/pages/home-detail/home-detail?id=${payload.id}`,
+    })
   }
 
 

@@ -1,0 +1,32 @@
+<!--pages/pay/pay.wxml-->
+<view class="pay">
+  <view class="address ym-card" bind:tap="addressClick" wx:if="{{addressInfo}}">
+    <view class="left">
+      <view class="name">{{addressInfo.name}}</view>
+      <view class="phone">{{addressInfo.phone}}</view>
+      <view class="content">{{addressInfo.content}}</view>
+    </view>
+    <view class="right">
+      <van-icon name="arrow" />
+    </view>
+  </view>
+  <view wx:else="" class="address ym-card" bind:tap="addressClick">
+   点我选择收货地址
+  </view>
+  <van-card price="{{info.current_price}}" desc="{{info.subtitle}}" title="{{info.title}}" thumb="{{info.img}}" />
+
+  <view class="ym-card">
+    <view class="item">
+      <view class="key">商品金额</view>
+      <view class="value">¥{{info.current_price}}</view>
+    </view>
+    <view class="item">
+      <view class="key">运费</view>
+      <view class="value">{{info.freight ? '¥'+info.freight : '免运费' }}</view>
+    </view>
+  </view>
+
+  <van-submit-bar price="{{info.current_price*100}}" button-text="支付" bind:submit="onSubmit" />
+
+  <address-modal bind:itemClick="handleItemClick" wx:if="{{showAddress}}" bind:close="addressClose" />
+</view>

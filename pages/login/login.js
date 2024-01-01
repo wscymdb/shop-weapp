@@ -23,6 +23,7 @@ Page({
     const {data,code} = await http.login(this.data.info)
     if(code === 0) {
       wx.setStorageSync('token', data.token)
+      wx.setStorageSync('user_id', data.id)
       wx.switchTab({
         url: '/pages/home/home',
         fail(e) {

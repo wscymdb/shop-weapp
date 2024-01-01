@@ -1,0 +1,12 @@
+<!--components/address-modal/address-modal.wxml-->
+<van-popup show="{{ show }}" position="bottom" bind:close="onClose" closeable>
+  <view class="list">
+    <view class="item" wx:for="{{list}}" wx:key="id" bind:tap="handleClick" data-info="{{item}}">
+      <view class="top">
+        <view class="content">{{item.content}}</view>
+        <view class="name">{{item.name}}</view>
+      </view>
+      <view class="phone">{{item.phone}}</view>
+    </view>
+  </view>
+</van-popup>

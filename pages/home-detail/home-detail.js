@@ -10,7 +10,9 @@ Page({
     show: false,
     type: 0,
     id: 0,
-    info: {}
+    info: {},
+    location: '杭州市',
+    cartCount: 0
   },
 
   /**
@@ -24,6 +26,29 @@ Page({
       id
     })
     this.initData()
+    this.fetchCartCount()
+  },
+  handleLocation() {
+    const that = this
+    console.log(12);
+    wx.getLocation({
+      type: 'gcj02', //返回可以用于wx.openLocation的经纬度
+      success(res) {
+        const latitude = res.latitude
+        const longitude = res.longitude
+        wx.chooseLocation({
+          success(res) {
+            console.log(res);
+            that.setData({
+              location: res.name
+            })
+          }
+        })
+      },
+      fail(e) {
+        console.log(e);
+      }
+    })
   },
   async initData() {
     const {
@@ -31,11 +56,19 @@ Page({
       code
     } = await http.getProductById(this.data.id)
     if (code === 0) {
-      let {detail_path,banner_path,...other} = data
+      let {
+        detail_path,
+        banner_path,
+        ...other
+      } = data
       detail_path = detail_path.split(',')
       banner_path = banner_path.split(',')
       this.setData({
-        info:{...other,detail_path,banner_path}
+        info: {
+          ...other,
+          detail_path,
+          banner_path
+        }
       })
     }
   },
@@ -52,10 +85,20 @@ Page({
         dataset
       }
     } = e
+
     this.setData({
-      show: true,
       type: dataset.type
     })
+    if (dataset.type === 0) {
+      this.setData({
+        show: true,
+      })
+    } else {
+      wx.redirectTo({
+        url: `/pages/pay/pay?id=${this.data.id}`,
+      })
+    }
+
   },
   // 弹窗关闭
   handlePopupClose(e) {
@@ -64,16 +107,46 @@ Page({
     })
   },
   // 弹窗确定
-  handleConfirm() {
+  async handleConfirm(e) {
     // this.data.type 0-》从加入购物车进入  1-》立即购买进入
     if (this.data.type === 0) {
-      Toast('加购成功~');
-
+      const user_id = wx.getStorageSync('user_id')
+      const params = {
+        product_id: e.detail.productId,
+        user_id
+      }
+      const {
+        code
+      } = await http.createShoppingCart(params)
+      if (code === 0) {
+        wx.showToast({
+          title: '加购成功～',
+        })
+      }
       this.setData({
         show: false
       })
     } else {
-
+      console.log(123123213);
+     
     }
+  },
+  // 获取购物车数量
+  async fetchCartCount() {
+    const userId = wx.getStorageSync('user_id')
+    const {
+      code,
+      data
+    } = await http.fetchListByUId(userId)
+    if (code === 0) {
+      this.setData({
+        cartCount: data.length
+      })
+    }
+  },
+  goCart(e) {
+    wx.switchTab({
+      url: '/pages/shopping-cart/shopping-cart',
+    })
   }
 })

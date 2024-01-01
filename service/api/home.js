@@ -27,3 +27,5 @@ export const getLabelList = () => {
     url:'/label/'
   })
 }
+
+

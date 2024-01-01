@@ -2,9 +2,14 @@
 App({
   onLaunch() {
     // 展示本地存储能力
-    const logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
+    const token = wx.getStorageSync('token')
+    if(!token) {
+      console.log(123123);
+      wx.redirectTo({
+        url: '/pages/login/login',
+      })
+    }
+  
 
     // 登录
     wx.login({

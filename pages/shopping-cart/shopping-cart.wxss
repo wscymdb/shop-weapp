@@ -1,0 +1,25 @@
+/* pages/shopping-cart/shopping-cart.wxss */
+.shopping-cart {
+  height: 100%;
+  background-color: #efefef;
+  padding: 30rpx 0;
+  box-sizing: border-box;
+}
+.van-swipe-cell {
+  margin-bottom: 30rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+.item .van-card {
+  background-color:#fff ;
+}
+.right-view {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: inherit;
+  width: 65px;
+  background-color: red;
+  color: white;
+}

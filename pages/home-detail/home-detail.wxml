@@ -29,14 +29,14 @@
       <!-- 运费 -->
       <view class="freight">
         <view class="key">运费</view>
-        <view class="value">{{info.freight}}元</view>
+        <view class="value">{{info.freight ? info.freight+'元' : '包邮'}}</view>
       </view>
       <view class="address">
         <view class="key">送至</view>
         <view class="right">
           <view class="position">
             <van-icon name="location" color="#d4463f" size="28rpx" />
-            <view class="name">杭州市</view>
+            <view class="name" bind:tap="handleLocation">{{location}}</view>
           </view>
           <view class="desc">
             现在至明天16点之前下单，预计后天
@@ -58,18 +58,17 @@
   </view>
   <!-- 购买加购区域 -->
   <van-goods-action>
-    <van-goods-action-icon icon="wap-home-o" text="回首页" bind:tap="goHome"  />
-    <van-goods-action-icon icon="cart-o" text="购物车" info="5" />
+    <van-goods-action-icon icon="wap-home-o" text="回首页" bind:tap="goHome" />
+    <van-goods-action-icon icon="cart-o" text="购物车" info="{{cartCount}}" bind:tap="goCart" />
     <van-goods-action-button text="加入购物车" type="warning" bind:tap="handleSubmit" data-type="{{0}}" />
     <van-goods-action-button bind:tap="handleSubmit" data-type="{{1}}" text="立即购买" />
   </van-goods-action>
   <!-- 商标 -->
   <view class="brand">
-  ®️™️飞天牛科技网络提供
+    ®️™️飞天牛科技网络提供
   </view>
   <!-- 加购、购买弹窗 -->
-  <shopping-cart-detail wx:if="{{show}}" bind:popupClose="handlePopupClose" bind:popupConfirm="handleConfirm"></shopping-cart-detail>
+  <shopping-cart-detail wx:if="{{show}}" productId="{{id}}" bind:popupClose="handlePopupClose" bind:popupConfirm="handleConfirm"></shopping-cart-detail>
   <van-toast id="van-toast" />
 
 </view>
-

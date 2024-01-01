@@ -17,7 +17,7 @@
     </view>
 
   </view>
-  <view class="shopping-cart" catch:tap="handleCartClick">
+  <!-- <view class="shopping-cart" catch:tap="handleCartClick">
     <van-icon name="cart-o" color="#fff" size="38rpx" />
-  </view>
+  </view> -->
 </view>

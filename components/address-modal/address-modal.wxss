@@ -1,0 +1,23 @@
+/* components/address-modal/address-modal.wxss */
+.list {
+  padding: 32rpx;
+  box-sizing: border-box;
+
+}
+.item {
+  padding: 32rpx;
+  border-radius: 10rpx;
+  background-color: #ffffff;
+}
+.top {
+  display: flex;
+  align-items: center;
+}
+.top .name {
+  margin-left: 10rpx;
+  color: #afaaaa;
+}
+.phone {
+  font-size: 28rpx;
+  color: rgb(134, 125, 125);
+}

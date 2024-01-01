@@ -1,10 +1,11 @@
 // components/shopping-cart-detail/shopping-cart-detail.js
+import http from '../../service/api/index'
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-    
+    productId:String
   },
 
   /**
@@ -13,13 +14,42 @@ Component({
   data: {
     show: true,
     activeIndex:0,
-    count:1
+    count:1,
+    info:{}
   },
+
+  /**
+   * 生命周期
+   */
+
+   lifetimes: {
+     attached() {
+       this.initData()
+     }
+   },
 
   /**
    * 组件的方法列表
    */
   methods: {
+    // initData() {
+    //   console.log(this.properties.productId);
+    // },
+    async initData() {
+      const id = this.properties.productId
+      if(!id) return
+      const {
+        data,
+        code
+      } = await http.getProductById(id)
+      if (code === 0) {
+        const info = {...data}
+        info.img = info.banner_path.split(',')[0]
+        this.setData({
+          info
+        })
+      }
+    },
     handleKindClick(e) {
       const {currentTarget:{dataset}} = e
       console.log(dataset);
@@ -38,8 +68,9 @@ Component({
     handleClose() {
       this.triggerEvent('popupClose')
     },
-    handleConfirm() {
-      this.triggerEvent('popupConfirm')
+    async handleConfirm() {
+     
+      this.triggerEvent('popupConfirm',{productId:this.data.productId})
     }
 
   }

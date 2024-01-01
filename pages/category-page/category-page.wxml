@@ -1,6 +1,6 @@
 <!--pages/category-page/category-page.wxml-->
 <view class="category-page">
-<view class="title">精选大牌</view>
+<view class="title">{{title}}</view>
 <view class="content">
 <view class="list" wx:if="{{list.length}}">
   <block wx:for="{{list}}" wx:key="id">

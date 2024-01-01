@@ -1,10 +1,12 @@
 {
   "pages": [
     "pages/home/home",
+    "pages/shopping-cart/shopping-cart",
     "pages/my/my",
     "pages/home-detail/home-detail",
     "pages/login/login",
-    "pages/category-page/category-page"
+    "pages/category-page/category-page",
+    "pages/pay/pay"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -22,6 +24,12 @@
         "selectedIconPath": "/assets/images/home_active.png"
       },
       {
+        "pagePath": "pages/shopping-cart/shopping-cart",
+        "text": "购物车",
+        "iconPath": "/assets/images/cart.png",
+        "selectedIconPath": "/assets/images/cart_active.png"
+      },
+      {
         "pagePath": "pages/my/my",
         "text": "我的",
         "iconPath": "/assets/images/my.png",
@@ -29,5 +37,14 @@
       }
     ]
   },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示" 
+    }
+  },
+  "requiredPrivateInfos": [
+    "chooseLocation",
+    "getLocation"
+  ],
   "sitemapLocation": "sitemap.json"
 }

@@ -43,6 +43,13 @@ class YMRequest {
       ...options
     })
   }
+
+  delete(options) {
+    return this.request({
+      method: 'delete',
+      ...options
+    })
+  }
 }
 
 // export const http = new YMRequest('http://localhost:8888')

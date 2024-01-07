@@ -2,8 +2,8 @@
 <view class="shopping-cart">
   <view class="list">
     <block  wx:for="{{list}}" wx:key="id">
-      <van-swipe-cell right-width="{{ 65 }}" bind:click="handleClick" data-id="{{item.pId}}">
-        <van-card  price="{{item.current_price}}" desc="{{item.subtitle}}" title="{{item.title}}" thumb="{{item.banner_path}}" />
+      <van-swipe-cell right-width="{{ 65 }}" >
+        <van-card bind:tap="handleClick" data-id="{{item.pId}}"  price="{{item.current_price}}" desc="{{item.subtitle}}" title="{{item.title}}" thumb="{{item.banner_path}}" />
         <view slot="right" class="right-view" bind:tap="handleDelete" data-id="{{item.id}}">
           删除
         </view>

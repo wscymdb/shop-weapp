@@ -7,3 +7,10 @@ export const createOrder = (data) => {
    })
 }
 
+export const checkOrderByType= (data) => {
+  return http.post({ 
+    url:'/order/checkType', 
+    data
+   })
+}
+

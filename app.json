@@ -6,7 +6,9 @@
     "pages/home-detail/home-detail",
     "pages/login/login",
     "pages/category-page/category-page",
-    "pages/pay/pay"
+    "pages/pay/pay",
+    "pages/my-detail/my-detail",
+    "pages/address/address"
   ],
   "window": {
     "backgroundTextStyle": "light",

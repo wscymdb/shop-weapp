@@ -1,0 +1,26 @@
+<!--pages/shopping-cart/shopping-cart.wxml-->
+<view class="address">
+  <view class="list">
+    <block wx:for="{{list}}" wx:key="id">
+      <van-swipe-cell right-width="{{ 65 }}">
+        <view class="content">
+          <view class="top">
+            <view class="add">{{item.content}}</view>
+            <view class="name">{{item.name}}</view>
+          </view>
+          <view class="phone">
+            {{item.phone}}
+          </view>
+        </view>
+        <view slot="right" class="right-view" bind:tap="handleDelete" data-id="{{item.id}}">
+          删除
+        </view>
+      </van-swipe-cell>
+    </block>
+  </view>
+  <view class="btns">
+    <van-button  block bind:tap="handleCreate" type="primary" bind:tap="handleCreate">新建地址</van-button>
+  </view>
+  <!-- address-create -->
+  <address-create wx:if="{{showCreate}}" bind:onClose="handleClose"></address-create>
+</view>

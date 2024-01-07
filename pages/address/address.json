@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "van-card": "@vant/weapp/card/index",
+    "van-swipe-cell": "@vant/weapp/swipe-cell/index",
+    "van-button": "@vant/weapp/button/index",
+    "address-create":"/components/address-create/address-create"
+  },
+  "navigationBarTitleText": "地址管理"
+
+}

@@ -1,0 +1,7 @@
+/* components/address-create/address-create.wxss */
+.btns {
+  margin-top: 30px !important;
+}
+.main {
+  margin-top: 100rpx;
+}

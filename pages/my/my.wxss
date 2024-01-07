@@ -1,1 +1,79 @@
 /* pages/my/my.wxss */
+.my {
+  /* padding: 0 20rpx; */
+  background-color: #efefef;
+  height: 100%;
+}
+.info {
+  display: flex;
+  align-items: center;
+  padding: 32rpx;
+  min-height: 300rpx;
+  border-bottom-right-radius: 50rpx;
+  border-bottom-left-radius: 50rpx;
+  overflow: hidden;
+  background-color: rgba(236, 51, 51, 0.8);
+}
+.user {
+  z-index: 999;
+}
+.left {
+  color: #fff;
+}
+.avatar {
+  width: 120rpx;
+  height: 120rpx;
+  margin-right: 40rpx;
+  border-radius: 50%;
+  z-index: 99;
+  overflow: hidden;
+}
+.name {
+  font-size: 32rpx;
+  z-index: 99;
+}
+.desc {
+  font-size: 24rpx;
+}
+
+.content {
+  position: relative;
+  padding: 32rpx;
+}
+.tags {
+  position: absolute;
+  top: -60rpx;
+  left: 16rpx;
+  right: 16rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 32rpx;
+  background-color: #fff;
+  border-radius: 14rpx;
+  box-sizing: border-box;
+}
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10rpx;
+}
+.key {
+  width: 60rpx;
+  height: 60rpx;
+}
+.value {
+  font-size: 24rpx;
+  color: rgba(0, 0, 0, .6);
+}
+.actions {
+  margin: 30rpx 16rpx 0;
+  padding: 32rpx;
+  background-color: #fff;
+  border-radius: 14rpx;
+  box-sizing: border-box;
+}
+.login-out {
+  margin: 30rpx 16rpx 0;
+}

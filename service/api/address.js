@@ -6,6 +6,18 @@ export const fetchAddressList = (id) => {
     url:`/address/${id}`, 
    })
 }
+export const createAddress= (data) => {
+  return http.post({ 
+    url:`/address/create`, 
+    data
+   })
+}
+
+export const deleteAddress= (id) => {
+  return http.delete({ 
+    url:`/address/${id}`, 
+   })
+}
 
 
 

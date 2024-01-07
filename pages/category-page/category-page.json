@@ -1,5 +1,6 @@
 {
   "usingComponents": {
     "home-list-item":"/components/home-list-item/home-list-item"
-  }
+  },
+  "navigationBarTitleText": "品类"
 }

@@ -1,2 +1,33 @@
 <!--pages/my/my.wxml-->
-<text>pages/my/my.wxml</text>
+<view class="my">
+  <view class="info">
+    <image class="avatar" src="http://192.168.1.103:8888/1703306946620-wallhaven-2yz3dm_1600x1000.png"></image>
+    <view class="left">
+      <view class="name">{{info.nick_name}}</view>
+      <view class="desc">欢迎光临，亲爱的～</view>
+    </view>
+  </view>
+  <view class="content">
+    <view class="tags">
+      <view class="item" bind:tap="handleTagClick" data-status="{{0}}">
+        <image class="key" src="../../assets/images/daifahuo.png"></image>
+        <view class="value">待发货</view>
+      </view>
+      <view class="item" bind:tap="handleTagClick" data-status="{{1}}">
+        <image class="key" src="../../assets/images/daishouhuo.png"></image>
+        <view class="value">待收货</view>
+      </view>
+      <view class="item" bind:tap="handleTagClick" data-status="{{2}}">
+        <image class="key" src="../../assets/images/quanbudingdan.png"></image>
+        <view class="value">全部订单</view>
+      </view>
+    </view>
+    <view>&emsp;</view>
+  </view>
+  <view class="actions">
+    <van-cell bind:tap="handleAddress" title="地址管理" isLink border="{{ false }}" />
+  </view>
+  <view class="login-out">
+    <van-button  block bind:tap="logout">登 出</van-button>
+  </view>
+</view>

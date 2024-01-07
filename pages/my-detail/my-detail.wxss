@@ -1,0 +1,22 @@
+/* pages/my-detail/my-detail.wxss *//* pages/shopping-cart/shopping-cart.wxss */
+.my-detail {
+  position: relative;
+  height: 100%;
+  background-color: #efefef;
+  padding: 30rpx 20rpx;
+  box-sizing: border-box;
+}
+.title {
+  position: sticky;
+  padding: 20rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+  margin-bottom: 20rpx;
+}
+
+ .van-card {
+  background-color:#fff ;
+  margin-bottom: 30rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+}

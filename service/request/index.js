@@ -21,10 +21,16 @@ class YMRequest {
         fail: reject,
         complete(res) {
           const { code,msg } = res.data
-          if (code !== 0) return wx.showToast({
-            title: msg,
-            icon: 'error'
-          })
+          if(code === -1004) {
+            wx.redirectTo({
+              url: '/pages/login/login',
+            })
+          }else if(code !== 0) {
+            return wx.showToast({
+              title: msg,
+              icon: 'error'
+            })
+          }
         }
       })
     })

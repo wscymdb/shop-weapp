@@ -5,16 +5,40 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    info: {
+      nick_name: ''
+    }
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    this.getUserInfo()
   },
-
+  getUserInfo() {
+    const info = wx.getStorageSync('user_info')
+    this.setData({
+      info
+    })
+  },
+  logout() {
+    wx.setStorageSync('token', '')
+    wx.redirectTo({
+      url: '/pages/login/login',
+    })
+  },
+  handleTagClick(e) {
+    let status = e.currentTarget.dataset.status
+    wx.redirectTo({
+      url: `/pages/my-detail/my-detail?status=${status}`,
+    })
+  },
+  handleAddress() {
+    wx.redirectTo({
+      url: '/pages/address/address',
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

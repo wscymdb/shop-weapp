@@ -1,0 +1,14 @@
+<!--components/address-create/address-create.wxml-->
+<van-popup show="{{ true}}" position="bottom" closeable round bind:close="onClose">
+  <view class="main">
+    <van-cell-group>
+    <van-field  label="收货人姓名" model:value="{{ name }}" placeholder="请输入收货人姓名" border="{{ false }}"  />
+    <van-field label="联系电话" model:value="{{ phone }}" placeholder="请输入联系电话" border="{{ false }}"  />
+    <van-field label="详细地址" type="textarea" model:value="{{ content }}" autosize placeholder="请输入详细地址" border="{{ false }}"  />
+    <view class="btns">
+      <van-button block bind:tap="handleCreate" round type="danger" >保存地址</van-button>
+    </view>
+    
+  </van-cell-group>
+  </view>
+</van-popup>
